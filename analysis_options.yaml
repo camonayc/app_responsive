@@ -1,0 +1,96 @@
+include: package:flutter_lints/flutter.yaml
+
+analysis:
+  exclude:
+    - .vscode/**          # Ignora configuraciones locales del editor
+    - build/**            # Ignora archivos generados por compilación
+    - generated/**        # Ignora código generado (freezed, json_serializable, etc.)
+
+  language:
+    strict-casts: true        # Prohíbe casts implícitos peligrosos (evita errores con dynamic)
+    strict-inference: true    # Obliga a que la inferencia de tipos sea clara
+    strict-raw-types: true    # Evita usar List o Map sin tipo explícito
+
+analyzer:
+  errors:
+    missing_return: error                              # Marca como error funciones que no retornan cuando deberían
+    missing_required_param: error                      # Error si no se pasa un parámetro required
+    invalid_use_of_visible_for_testing_member: error   # Evita usar miembros internos fuera de tests
+    must_be_immutable: error                           # Error si un widget @immutable tiene campos no finales
+    dead_code: warning                                 # Detecta código que nunca se ejecuta
+    unused_import: warning                             # Detecta imports innecesarios
+
+linter:
+  rules:
+
+    # =========================
+    # 🛡 Seguridad
+    # =========================
+    avoid_print: true                    # Evita usar print en producción
+    secure_pubspec_urls: true            # Obliga a usar https en pubspec
+    avoid_dynamic_calls: true            # Evita llamadas a métodos sobre dynamic
+
+    # =========================
+    # ⚡ Performance
+    # =========================
+    prefer_const_constructors: true                  # Obliga a usar const cuando sea posible
+    prefer_const_constructors_in_immutables: true    # Requiere const en clases inmutables
+    prefer_const_literals_to_create_immutables: true # Usa const en listas/mapas inmutables
+    prefer_const_declarations: true                  # Usa const en vez de final cuando aplique
+    avoid_unnecessary_containers: true               # Evita Containers innecesarios
+
+    # =========================
+    # 🧼 Clean Code
+    # =========================
+    prefer_single_quotes: true            # Usa comillas simples consistentemente
+    prefer_final_fields: true             # Campos privados deben ser final si no cambian
+    prefer_final_locals: true             # Variables locales deben ser final si no cambian
+    always_declare_return_types: true     # Obliga a declarar tipo de retorno explícito
+    type_annotate_public_apis: true       # Obliga a tipar métodos públicos (arquitectura clara)
+    always_use_package_imports: true      # Fuerza usar package: en vez de imports relativos
+    avoid_relative_lib_imports: true      # Evita imports relativos dentro de lib
+    unnecessary_late: true                # Evita usar late sin necesidad
+    unnecessary_null_checks: true         # Detecta chequeos de null redundantes
+    unnecessary_null_in_if_null_operators: true # Detecta ?? null innecesarios
+    directives_ordering: true             # Ordena imports correctamente
+
+    # =========================
+    # 🧠 Arquitectura
+    # =========================
+    depend_on_referenced_packages: true   # Evita dependencias no declaradas en pubspec
+    implementation_imports: true          # Evita importar archivos internos de otros packages
+
+    # =========================
+    # 📦 Colecciones
+    # =========================
+    prefer_is_empty: true                 # Usa isEmpty en vez de length == 0
+    prefer_is_not_empty: true             # Usa isNotEmpty en vez de length > 0
+    collection_methods_unrelated_type: true # Evita contains/remove con tipos incorrectos
+
+    # =========================
+    # 🔁 Async
+    # =========================
+    unawaited_futures: true               # Obliga a marcar futuros no esperados explícitamente
+    discarded_futures: true               # Detecta Futures ignorados accidentalmente
+
+    # =========================
+    # 🧪 Buenas prácticas Flutter
+    # =========================
+    use_key_in_widget_constructors: true  # Requiere Key en constructores de widgets
+    use_super_parameters: true            # Usa super.key en vez de boilerplate
+    sort_constructors_first: true         # Ordena constructores antes que métodos
+    sort_child_properties_last: true      # child debe ir al final en widgets
+    use_full_hex_values_for_flutter_colors: true # Obliga a usar 8 dígitos en colores hex
+
+    # =========================
+    # ❗Errores comunes
+    # =========================
+    avoid_catches_without_on_clauses: true     # Evita catch genéricos sin tipo
+    use_rethrow_when_possible: true            # Usa rethrow en vez de throw e
+    no_duplicate_case_values: true             # Evita duplicados en switch
+    avoid_bool_literals_in_conditional_expressions: true # Evita ternarios con true/false redundantes
+    avoid_redundant_argument_values: true      # Evita pasar valores que ya son default
+    cascade_invocations: true                  # Recomienda usar .. en vez de repetir variable
+
+formatter:
+  trailing_commas: preserve
