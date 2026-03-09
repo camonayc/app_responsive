@@ -37,23 +37,23 @@ void main() {
 
   group('Spacing — grilla de 4 px', () {
     test('todos los tokens son múltiplos de 4', () {
-      final tokens = {
-        'xs': Spacing.xs,
-        'sm': Spacing.sm,
-        'md': Spacing.md,
-        'lg': Spacing.lg,
-        'xl': Spacing.xl,
-        'x2l': Spacing.x2l,
-        'x3l': Spacing.x3l,
-        'x4l': Spacing.x4l,
-      };
-      tokens.forEach((name, value) {
-        expect(
-          value % 4,
-          0.0,
-          reason: 'Spacing.$name ($value) no es múltiplo de 4',
-        );
-      });
+      final _ =
+          {
+            'xs': Spacing.xs,
+            'sm': Spacing.sm,
+            'md': Spacing.md,
+            'lg': Spacing.lg,
+            'xl': Spacing.xl,
+            'x2l': Spacing.x2l,
+            'x3l': Spacing.x3l,
+            'x4l': Spacing.x4l,
+          }..forEach((name, value) {
+            expect(
+              value % 4,
+              0.0,
+              reason: 'Spacing.$name ($value) no es múltiplo de 4',
+            );
+          });
     });
   });
 }

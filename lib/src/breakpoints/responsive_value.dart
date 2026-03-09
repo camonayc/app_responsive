@@ -1,5 +1,5 @@
-import 'breakpoints.dart';
-import 'device_type.dart';
+import 'package:app_responsive/src/breakpoints/breakpoints.dart';
+import 'package:app_responsive/src/breakpoints/device_type.dart';
 
 /// Contiene un valor de tipo [T] por cada breakpoint.
 ///

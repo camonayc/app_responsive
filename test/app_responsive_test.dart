@@ -9,6 +9,8 @@
 //   test/widgets/       — ResponsiveVisibility, MobileOnly, TabletAndUp, DesktopOnly
 //   test/theme/         — AppResponsiveTheme, ResponsiveThemeExtension
 
+// ignore_for_file: cascade_invocations
+
 import 'package:app_responsive/app_responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';

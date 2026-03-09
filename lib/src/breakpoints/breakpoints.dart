@@ -1,4 +1,4 @@
-import 'device_type.dart';
+import 'package:app_responsive/src/breakpoints/device_type.dart';
 
 /// Umbrales de ancho en píxeles lógicos del sistema responsive.
 ///

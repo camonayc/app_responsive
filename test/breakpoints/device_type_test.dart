@@ -16,7 +16,7 @@ void main() {
     });
 
     test('índices ascendentes mobile → widescreen', () {
-      final ordered = DeviceType.values;
+      const ordered = DeviceType.values;
       for (var i = 0; i < ordered.length - 1; i++) {
         expect(ordered[i].index, lessThan(ordered[i + 1].index));
       }

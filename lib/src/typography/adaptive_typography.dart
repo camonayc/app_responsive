@@ -1,8 +1,7 @@
+import 'package:app_responsive/src/breakpoints/breakpoints.dart';
+import 'package:app_responsive/src/breakpoints/device_type.dart';
+import 'package:app_responsive/src/typography/type_scale.dart';
 import 'package:flutter/material.dart';
-
-import '../breakpoints/breakpoints.dart';
-import '../breakpoints/device_type.dart';
-import 'type_scale.dart';
 
 /// Escala tipográfica adaptativa — aplica un multiplicador de tamaño
 /// según el dispositivo actual, sobre los valores base de [TypeScale].
@@ -36,14 +35,13 @@ import 'type_scale.dart';
 /// Text('Hola', style: typo.h1);
 /// ```
 class AdaptiveTypography {
-  const AdaptiveTypography._(this.deviceType);
-
-  final DeviceType deviceType;
-
   /// Crea una instancia resolviendo el dispositivo desde el [context].
   factory AdaptiveTypography.of(BuildContext context) => AdaptiveTypography._(
     Breakpoints.resolve(MediaQuery.sizeOf(context).width),
   );
+  const AdaptiveTypography._(this.deviceType);
+
+  final DeviceType deviceType;
 
   // ── Scale factor ──────────────────────────────────────────────────────────
 

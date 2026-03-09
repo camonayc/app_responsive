@@ -23,15 +23,15 @@ void main() {
 
     test('decrece Xl → Sm', () {
       expect(
-        TypeScale.displayXl.fontSize!,
+        TypeScale.displayXl.fontSize,
         greaterThan(TypeScale.displayLg.fontSize!),
       );
       expect(
-        TypeScale.displayLg.fontSize!,
+        TypeScale.displayLg.fontSize,
         greaterThan(TypeScale.displayMd.fontSize!),
       );
       expect(
-        TypeScale.displayMd.fontSize!,
+        TypeScale.displayMd.fontSize,
         greaterThan(TypeScale.displaySm.fontSize!),
       );
     });

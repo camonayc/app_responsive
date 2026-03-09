@@ -1,8 +1,7 @@
+import 'package:app_responsive/src/breakpoints/breakpoints.dart';
+import 'package:app_responsive/src/breakpoints/device_type.dart';
+import 'package:app_responsive/src/breakpoints/responsive_value.dart';
 import 'package:flutter/widgets.dart';
-
-import 'breakpoints.dart';
-import 'device_type.dart';
-import 'responsive_value.dart';
 
 /// Extiende [BuildContext] con helpers de responsive.
 ///

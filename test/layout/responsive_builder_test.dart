@@ -24,7 +24,7 @@ void main() {
         _constrained(
           375,
           ResponsiveBuilder(
-            builder: (ctx, device, __) {
+            builder: (ctx, device, _) {
               captured = device;
               return const SizedBox.shrink();
             },
@@ -40,7 +40,7 @@ void main() {
         _constrained(
           520,
           ResponsiveBuilder(
-            builder: (ctx, device, __) {
+            builder: (ctx, device, _) {
               captured = device;
               return const SizedBox.shrink();
             },
@@ -56,7 +56,7 @@ void main() {
         _constrained(
           800,
           ResponsiveBuilder(
-            builder: (ctx, device, __) {
+            builder: (ctx, device, _) {
               captured = device;
               return const SizedBox.shrink();
             },
@@ -72,7 +72,7 @@ void main() {
         _constrained(
           1200,
           ResponsiveBuilder(
-            builder: (ctx, device, __) {
+            builder: (ctx, device, _) {
               captured = device;
               return const SizedBox.shrink();
             },
@@ -88,7 +88,7 @@ void main() {
         _constrained(
           1600,
           ResponsiveBuilder(
-            builder: (ctx, device, __) {
+            builder: (ctx, device, _) {
               captured = device;
               return const SizedBox.shrink();
             },
@@ -106,7 +106,7 @@ void main() {
         _constrained(
           450,
           ResponsiveBuilder(
-            builder: (ctx, __, constraints) {
+            builder: (ctx, _, constraints) {
               captured = constraints;
               return const SizedBox.shrink();
             },
@@ -125,7 +125,7 @@ void main() {
         _constrained(
           375,
           ResponsiveBuilder(
-            builder: (ctx, device, __) => device.isMobileFamily
+            builder: (ctx, device, _) => device.isMobileFamily
                 ? const Text('mobile')
                 : const Text('grande'),
           ),
@@ -140,7 +140,7 @@ void main() {
         _constrained(
           1200,
           ResponsiveBuilder(
-            builder: (ctx, device, __) => device.isMobileFamily
+            builder: (ctx, device, _) => device.isMobileFamily
                 ? const Text('mobile')
                 : const Text('grande'),
           ),
@@ -153,7 +153,7 @@ void main() {
   group('ResponsiveBuilder — es un StatelessWidget', () {
     test('instancia es StatelessWidget', () {
       final widget = ResponsiveBuilder(
-        builder: (_, __, ___) => const SizedBox.shrink(),
+        builder: (_, _, _) => const SizedBox.shrink(),
       );
       expect(widget, isA<StatelessWidget>());
     });

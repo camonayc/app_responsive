@@ -1,6 +1,5 @@
+import 'package:app_responsive/src/typography/adaptive_typography.dart';
 import 'package:flutter/widgets.dart';
-
-import 'adaptive_typography.dart';
 
 /// Widget de texto que resuelve automáticamente el estilo tipográfico
 /// según el dispositivo actual.

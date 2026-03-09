@@ -19,12 +19,12 @@ Widget _build({required double width, required Widget layout}) =>
 
 void main() {
   group('ResponsiveLayout — renderiza la rama correcta', () {
-    final layout = ResponsiveLayout(
-      mobile: const Text('mobile'),
-      mobileLarge: const Text('mobileLarge'),
-      tablet: const Text('tablet'),
-      desktop: const Text('desktop'),
-      widescreen: const Text('widescreen'),
+    const layout = ResponsiveLayout(
+      mobile: Text('mobile'),
+      mobileLarge: Text('mobileLarge'),
+      tablet: Text('tablet'),
+      desktop: Text('desktop'),
+      widescreen: Text('widescreen'),
     );
 
     testWidgets('375px → mobile', (tester) async {
