@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(flutter test:*)"
+      "Bash(flutter test:*)",
+      "Bash(git tag -a \"v0.0.1\" -m \"Release v0.0.1:*)"
     ]
   }
 }
