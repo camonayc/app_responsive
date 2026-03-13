@@ -10,11 +10,10 @@ import 'package:flutter/widgets.dart';
 ///
 /// ### Comportamiento por defecto
 /// ```
-/// mobile      → 2 columnas
-/// mobileLarge → 2 columnas
-/// tablet      → 3 columnas
-/// desktop     → 4 columnas
-/// widescreen  → 5 columnas
+/// mobile     → 2 columnas
+/// tablet     → 3 columnas
+/// desktop    → 4 columnas
+/// widescreen → 5 columnas
 /// ```
 ///
 /// ### ¿Lista o grid en mobile?
@@ -23,7 +22,7 @@ import 'package:flutter/widgets.dart';
 /// ```dart
 /// // Lista (1 columna en mobile)
 /// AdaptiveGrid(
-///   columns: const ResponsiveValue(mobile: 1, mobileLarge: 2, tablet: 3),
+///   columns: const ResponsiveValue(mobile: 1, tablet: 3),
 ///   children: productos,
 /// )
 ///
@@ -44,14 +43,12 @@ class AdaptiveGrid extends StatelessWidget {
     required this.children,
     this.columns = const ResponsiveValue(
       mobile: 2,
-      mobileLarge: 2,
       tablet: 3,
       desktop: 4,
       widescreen: 5,
     ),
     this.spacing = const ResponsiveValue(
       mobile: 8.0,
-      mobileLarge: 10.0,
       tablet: 12.0,
       desktop: 16.0,
     ),
@@ -84,7 +81,6 @@ class AdaptiveGrid extends StatelessWidget {
          physics: physics,
          columns: const ResponsiveValue(
            mobile: 3,
-           mobileLarge: 4,
            tablet: 5,
            desktop: 6,
          ),
@@ -122,7 +118,6 @@ class AdaptiveGrid extends StatelessWidget {
          ),
          childAspectRatio: const ResponsiveValue(
            mobile: 2.2,
-           mobileLarge: 2.4,
            tablet: 2.0,
            desktop: 1.8,
          ),
@@ -195,7 +190,6 @@ SliverGridDelegate adaptiveGridDelegate({
   required DeviceType device,
   ResponsiveValue<int> columns = const ResponsiveValue(
     mobile: 2,
-    mobileLarge: 2,
     tablet: 3,
     desktop: 4,
     widescreen: 5,

@@ -54,7 +54,7 @@ void main() {
       expect(_crossAxisCount(tester), 2);
     });
 
-    testWidgets('mobileLarge (520) → 2 columnas', (tester) async {
+    testWidgets('mobile (520) → 2 columnas', (tester) async {
       await tester.pumpWidget(
         _build(
           width: 520,
@@ -121,14 +121,14 @@ void main() {
       expect(_crossAxisCount(tester), 3);
     });
 
-    testWidgets('mobileLarge (520) → 4 columnas', (tester) async {
+    testWidgets('mobile (520) → 3 columnas', (tester) async {
       await tester.pumpWidget(
         _build(
           width: 520,
           child: AdaptiveGrid.categoria(children: _items(8)),
         ),
       );
-      expect(_crossAxisCount(tester), 4);
+      expect(_crossAxisCount(tester), 3);
     });
 
     testWidgets('tablet (800) → 5 columnas', (tester) async {

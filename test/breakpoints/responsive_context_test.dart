@@ -26,7 +26,7 @@ void main() {
       expect(dt, DeviceType.mobile);
     });
 
-    testWidgets('520 → mobileLarge', (tester) async {
+    testWidgets('520 → mobile', (tester) async {
       late DeviceType dt;
       await tester.pumpWidget(
         _withWidth(
@@ -39,7 +39,7 @@ void main() {
           ),
         ),
       );
-      expect(dt, DeviceType.mobileLarge);
+      expect(dt, DeviceType.mobile);
     });
 
     testWidgets('800 → tablet', (tester) async {
@@ -101,7 +101,6 @@ void main() {
             builder: (ctx) {
               result = {
                 'isMobile': ctx.isMobile,
-                'isMobileLarge': ctx.isMobileLarge,
                 'isTablet': ctx.isTablet,
                 'isDesktop': ctx.isDesktop,
                 'isWidescreen': ctx.isWidescreen,
@@ -120,18 +119,9 @@ void main() {
     testWidgets('mobile (375)', (tester) async {
       final f = await flags(tester, 375);
       expect(f['isMobile'], isTrue);
-      expect(f['isMobileLarge'], isFalse);
       expect(f['isMobileFamily'], isTrue);
       expect(f['isTabletOrLarger'], isFalse);
       expect(f['isDesktopFamily'], isFalse);
-    });
-
-    testWidgets('mobileLarge (520)', (tester) async {
-      final f = await flags(tester, 520);
-      expect(f['isMobile'], isFalse);
-      expect(f['isMobileLarge'], isTrue);
-      expect(f['isMobileFamily'], isTrue);
-      expect(f['isTabletOrLarger'], isFalse);
     });
 
     testWidgets('tablet (900)', (tester) async {
@@ -189,10 +179,9 @@ void main() {
             builder: (ctx) {
               val = ctx.responsive<int>(
                 mobile: 1,
-                mobileLarge: 2,
-                tablet: 3,
-                desktop: 4,
-                widescreen: 5,
+                tablet: 2,
+                desktop: 3,
+                widescreen: 4,
               );
               return const SizedBox.shrink();
             },
@@ -207,20 +196,20 @@ void main() {
       (t) async => expect(await resolve(t, 375), 1),
     );
     testWidgets(
-      'devuelve 2 en mobileLarge (520)',
-      (t) async => expect(await resolve(t, 520), 2),
+      'devuelve 1 en mobile (520)',
+      (t) async => expect(await resolve(t, 520), 1),
     );
     testWidgets(
-      'devuelve 3 en tablet (800)',
-      (t) async => expect(await resolve(t, 800), 3),
+      'devuelve 2 en tablet (800)',
+      (t) async => expect(await resolve(t, 800), 2),
     );
     testWidgets(
-      'devuelve 4 en desktop (1200)',
-      (t) async => expect(await resolve(t, 1200), 4),
+      'devuelve 3 en desktop (1200)',
+      (t) async => expect(await resolve(t, 1200), 3),
     );
     testWidgets(
-      'devuelve 5 en widescreen (1600)',
-      (t) async => expect(await resolve(t, 1600), 5),
+      'devuelve 4 en widescreen (1600)',
+      (t) async => expect(await resolve(t, 1600), 4),
     );
 
     testWidgets('hereda hacia arriba cuando el tier no está definido', (

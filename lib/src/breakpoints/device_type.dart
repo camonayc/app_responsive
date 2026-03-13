@@ -6,13 +6,10 @@
 /// DeviceType.tablet.index > DeviceType.mobile.index // true
 /// ```
 enum DeviceType {
-  /// < 480 px — teléfonos en portrait
+  /// < 600 px — teléfonos en portrait (alinea con Material Design 3 compact)
   mobile,
 
-  /// 480–767 px — teléfonos grandes / phablets
-  mobileLarge,
-
-  /// 768–1023 px — tablets / teléfonos en landscape
+  /// 600–1023 px — tablets / teléfonos en landscape (M3 medium)
   tablet,
 
   /// 1024–1439 px — laptops / tablets en landscape
@@ -23,8 +20,8 @@ enum DeviceType {
 
   // ── Grupos de conveniencia ────────────────────────────────────────────────
 
-  /// `true` en [mobile] y [mobileLarge].
-  bool get isMobileFamily => index <= mobileLarge.index;
+  /// `true` solo en [mobile].
+  bool get isMobileFamily => index < DeviceType.tablet.index;
 
   /// `true` en [tablet] y dispositivos más grandes.
   bool get isTabletOrLarger => index >= tablet.index;

@@ -20,7 +20,6 @@ class ResponsiveLayout extends StatelessWidget {
   const ResponsiveLayout({
     super.key,
     required this.mobile,
-    this.mobileLarge,
     this.tablet,
     this.desktop,
     this.widescreen,
@@ -28,7 +27,6 @@ class ResponsiveLayout extends StatelessWidget {
 
   /// Layout para [DeviceType.mobile] — requerido, es el fallback base.
   final Widget mobile;
-  final Widget? mobileLarge;
   final Widget? tablet;
   final Widget? desktop;
   final Widget? widescreen;
@@ -36,11 +34,9 @@ class ResponsiveLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ResponsiveBuilder(
     builder: (BuildContext context, DeviceType device, _) => switch (device) {
-      DeviceType.widescreen =>
-        widescreen ?? desktop ?? tablet ?? mobileLarge ?? mobile,
-      DeviceType.desktop => desktop ?? tablet ?? mobileLarge ?? mobile,
-      DeviceType.tablet => tablet ?? mobileLarge ?? mobile,
-      DeviceType.mobileLarge => mobileLarge ?? mobile,
+      DeviceType.widescreen => widescreen ?? desktop ?? tablet ?? mobile,
+      DeviceType.desktop => desktop ?? tablet ?? mobile,
+      DeviceType.tablet => tablet ?? mobile,
       DeviceType.mobile => mobile,
     },
   );

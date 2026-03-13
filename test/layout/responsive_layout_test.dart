@@ -21,7 +21,6 @@ void main() {
   group('ResponsiveLayout — renderiza la rama correcta', () {
     const layout = ResponsiveLayout(
       mobile: Text('mobile'),
-      mobileLarge: Text('mobileLarge'),
       tablet: Text('tablet'),
       desktop: Text('desktop'),
       widescreen: Text('widescreen'),
@@ -32,9 +31,9 @@ void main() {
       expect(find.text('mobile'), findsOneWidget);
     });
 
-    testWidgets('520px → mobileLarge', (tester) async {
+    testWidgets('520px → mobile', (tester) async {
       await tester.pumpWidget(_build(width: 520, layout: layout));
-      expect(find.text('mobileLarge'), findsOneWidget);
+      expect(find.text('mobile'), findsOneWidget);
     });
 
     testWidgets('800px → tablet', (tester) async {
@@ -54,18 +53,6 @@ void main() {
   });
 
   group('ResponsiveLayout — herencia (fallback hacia abajo)', () {
-    testWidgets('mobileLarge hereda de mobile cuando no está definida', (
-      tester,
-    ) async {
-      await tester.pumpWidget(
-        _build(
-          width: 520,
-          layout: const ResponsiveLayout(mobile: Text('base')),
-        ),
-      );
-      expect(find.text('base'), findsOneWidget);
-    });
-
     testWidgets('tablet hereda de mobile si solo existe mobile', (
       tester,
     ) async {

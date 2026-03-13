@@ -8,11 +8,10 @@ import 'package:flutter/material.dart';
 ///
 /// ### Factores de escala
 /// ```
-/// mobile      → 1.00×  (base)
-/// mobileLarge → 1.05×
-/// tablet      → 1.10×
-/// desktop     → 1.15×
-/// widescreen  → 1.20×
+/// mobile     → 1.00×  (base)
+/// tablet     → 1.10×
+/// desktop    → 1.15×
+/// widescreen → 1.20×
 /// ```
 ///
 /// ### Nota sobre colores
@@ -47,7 +46,6 @@ class AdaptiveTypography {
 
   double get scaleFactor => switch (deviceType) {
     DeviceType.mobile => 1.00,
-    DeviceType.mobileLarge => 1.05,
     DeviceType.tablet => 1.10,
     DeviceType.desktop => 1.15,
     DeviceType.widescreen => 1.20,

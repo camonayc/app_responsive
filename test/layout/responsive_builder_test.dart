@@ -34,7 +34,7 @@ void main() {
       expect(captured, DeviceType.mobile);
     });
 
-    testWidgets('520px → mobileLarge', (tester) async {
+    testWidgets('520px → mobile', (tester) async {
       late DeviceType captured;
       await tester.pumpWidget(
         _constrained(
@@ -47,7 +47,7 @@ void main() {
           ),
         ),
       );
-      expect(captured, DeviceType.mobileLarge);
+      expect(captured, DeviceType.mobile);
     });
 
     testWidgets('800px → tablet', (tester) async {

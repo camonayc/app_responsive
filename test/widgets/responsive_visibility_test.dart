@@ -93,7 +93,7 @@ void main() {
           _build(
             width: width,
             child: const ResponsiveVisibility(
-              hiddenOn: {DeviceType.mobile, DeviceType.mobileLarge},
+              hiddenOn: {DeviceType.mobile},
               child: Text('mobile-hidden'),
             ),
           ),
@@ -138,7 +138,7 @@ void main() {
       expect(find.text('solo-mobile'), findsOneWidget);
     });
 
-    testWidgets('visible en mobileLarge (520)', (tester) async {
+    testWidgets('visible en mobile (520)', (tester) async {
       await tester.pumpWidget(
         _build(
           width: 520,
@@ -190,7 +190,7 @@ void main() {
       expect(find.text('tablet+'), findsNothing);
     });
 
-    testWidgets('oculto en mobileLarge (520)', (tester) async {
+    testWidgets('oculto en mobile (520)', (tester) async {
       await tester.pumpWidget(
         _build(
           width: 520,

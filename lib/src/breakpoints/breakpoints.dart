@@ -2,17 +2,16 @@ import 'package:app_responsive/src/breakpoints/device_type.dart';
 
 /// Umbrales de ancho en píxeles lógicos del sistema responsive.
 ///
+/// Alineados con Material Design 3:
 /// ```
-/// mobile      :    0 – 479 px
-/// mobileLarge :  480 – 767 px
-/// tablet      :  768 – 1023 px
-/// desktop     : 1024 – 1439 px
-/// widescreen  : 1440+ px
+/// mobile     :    0 –  599 px   (compact — todos los teléfonos portrait)
+/// tablet     :  600 – 1023 px   (medium  — tablets, teléfonos landscape)
+/// desktop    : 1024 – 1439 px   (expanded)
+/// widescreen : 1440+ px
 /// ```
 abstract final class Breakpoints {
   static const double mobile = 0;
-  static const double mobileLarge = 480;
-  static const double tablet = 768;
+  static const double tablet = 600;
   static const double desktop = 1024;
   static const double widescreen = 1440;
 
@@ -21,7 +20,6 @@ abstract final class Breakpoints {
     if (width >= widescreen) return DeviceType.widescreen;
     if (width >= desktop) return DeviceType.desktop;
     if (width >= tablet) return DeviceType.tablet;
-    if (width >= mobileLarge) return DeviceType.mobileLarge;
     return DeviceType.mobile;
   }
 }

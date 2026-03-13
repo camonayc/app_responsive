@@ -3,16 +3,15 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('DeviceType — valores del enum', () {
-    test('tiene exactamente 5 valores', () {
-      expect(DeviceType.values.length, 5);
+    test('tiene exactamente 4 valores', () {
+      expect(DeviceType.values.length, 4);
     });
 
     test('orden correcto de índices', () {
       expect(DeviceType.mobile.index, 0);
-      expect(DeviceType.mobileLarge.index, 1);
-      expect(DeviceType.tablet.index, 2);
-      expect(DeviceType.desktop.index, 3);
-      expect(DeviceType.widescreen.index, 4);
+      expect(DeviceType.tablet.index, 1);
+      expect(DeviceType.desktop.index, 2);
+      expect(DeviceType.widescreen.index, 3);
     });
 
     test('índices ascendentes mobile → widescreen', () {
@@ -27,10 +26,6 @@ void main() {
     test(
       'mobile → true',
       () => expect(DeviceType.mobile.isMobileFamily, isTrue),
-    );
-    test(
-      'mobileLarge → true',
-      () => expect(DeviceType.mobileLarge.isMobileFamily, isTrue),
     );
     test(
       'tablet → false',
@@ -52,10 +47,6 @@ void main() {
       () => expect(DeviceType.mobile.isTabletOrLarger, isFalse),
     );
     test(
-      'mobileLarge → false',
-      () => expect(DeviceType.mobileLarge.isTabletOrLarger, isFalse),
-    );
-    test(
       'tablet → true',
       () => expect(DeviceType.tablet.isTabletOrLarger, isTrue),
     );
@@ -73,10 +64,6 @@ void main() {
     test(
       'mobile → false',
       () => expect(DeviceType.mobile.isDesktopFamily, isFalse),
-    );
-    test(
-      'mobileLarge → false',
-      () => expect(DeviceType.mobileLarge.isDesktopFamily, isFalse),
     );
     test(
       'tablet → false',

@@ -24,12 +24,11 @@ extension ResponsiveContext on BuildContext {
   DeviceType get deviceType => Breakpoints.resolve(screenWidth);
 
   bool get isMobile => deviceType == DeviceType.mobile;
-  bool get isMobileLarge => deviceType == DeviceType.mobileLarge;
   bool get isTablet => deviceType == DeviceType.tablet;
   bool get isDesktop => deviceType == DeviceType.desktop;
   bool get isWidescreen => deviceType == DeviceType.widescreen;
 
-  /// `true` en [DeviceType.mobile] y [DeviceType.mobileLarge].
+  /// `true` solo en [DeviceType.mobile].
   bool get isMobileFamily => deviceType.isMobileFamily;
 
   /// `true` en [DeviceType.tablet] y superiores.
@@ -50,13 +49,11 @@ extension ResponsiveContext on BuildContext {
   /// ```
   T responsive<T>({
     required T mobile,
-    T? mobileLarge,
     T? tablet,
     T? desktop,
     T? widescreen,
   }) => ResponsiveValue<T>(
     mobile: mobile,
-    mobileLarge: mobileLarge,
     tablet: tablet,
     desktop: desktop,
     widescreen: widescreen,

@@ -16,7 +16,7 @@ import 'package:flutter/widgets.dart';
 ///
 /// ```dart
 /// ResponsiveVisibility(
-///   visibleOn: {DeviceType.mobile, DeviceType.mobileLarge},
+///   visibleOn: {DeviceType.mobile},
 ///   child: BottomBar(),
 /// )
 ///
@@ -57,14 +57,14 @@ class ResponsiveVisibility extends StatelessWidget {
 
 // ── Atajos por nombre ──────────────────────────────────────────────────────
 
-/// Visible únicamente en [DeviceType.mobile] y [DeviceType.mobileLarge].
+/// Visible únicamente en [DeviceType.mobile].
 class MobileOnly extends StatelessWidget {
   const MobileOnly({super.key, required this.child});
   final Widget child;
 
   @override
   Widget build(BuildContext context) => ResponsiveVisibility(
-    visibleOn: const {DeviceType.mobile, DeviceType.mobileLarge},
+    visibleOn: const {DeviceType.mobile},
     child: child,
   );
 }

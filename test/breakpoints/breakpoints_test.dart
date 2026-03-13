@@ -4,47 +4,31 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   group('Breakpoints — constantes', () {
     test('mobile = 0', () => expect(Breakpoints.mobile, 0));
-    test('mobileLarge = 480', () => expect(Breakpoints.mobileLarge, 480));
-    test('tablet = 768', () => expect(Breakpoints.tablet, 768));
+    test('tablet = 600', () => expect(Breakpoints.tablet, 600));
     test('desktop = 1024', () => expect(Breakpoints.desktop, 1024));
     test('widescreen = 1440', () => expect(Breakpoints.widescreen, 1440));
   });
 
-  group('Breakpoints.resolve — zona mobile (< 480)', () {
+  group('Breakpoints.resolve — zona mobile (< 600)', () {
     test('0 → mobile', () => expect(Breakpoints.resolve(0), DeviceType.mobile));
     test(
-      '320 → mobile',
-      () => expect(Breakpoints.resolve(320), DeviceType.mobile),
+      '375 → mobile',
+      () => expect(Breakpoints.resolve(375), DeviceType.mobile),
     );
     test(
-      '479 → mobile',
-      () => expect(Breakpoints.resolve(479), DeviceType.mobile),
-    );
-  });
-
-  group('Breakpoints.resolve — zona mobileLarge [480, 768)', () {
-    test(
-      '480 → mobileLarge',
-      () => expect(Breakpoints.resolve(480), DeviceType.mobileLarge),
-    );
-    test(
-      '600 → mobileLarge',
-      () => expect(Breakpoints.resolve(600), DeviceType.mobileLarge),
-    );
-    test(
-      '767 → mobileLarge',
-      () => expect(Breakpoints.resolve(767), DeviceType.mobileLarge),
+      '599 → mobile',
+      () => expect(Breakpoints.resolve(599), DeviceType.mobile),
     );
   });
 
-  group('Breakpoints.resolve — zona tablet [768, 1024)', () {
+  group('Breakpoints.resolve — zona tablet [600, 1024)', () {
     test(
-      '768 → tablet',
-      () => expect(Breakpoints.resolve(768), DeviceType.tablet),
+      '600 → tablet',
+      () => expect(Breakpoints.resolve(600), DeviceType.tablet),
     );
     test(
-      '900 → tablet',
-      () => expect(Breakpoints.resolve(900), DeviceType.tablet),
+      '800 → tablet',
+      () => expect(Breakpoints.resolve(800), DeviceType.tablet),
     );
     test(
       '1023 → tablet',

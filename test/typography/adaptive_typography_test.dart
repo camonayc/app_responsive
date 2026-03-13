@@ -30,8 +30,8 @@ void main() {
       (t) async => expect(await factor(t, 375), 1.00),
     );
     testWidgets(
-      'mobileLarge (520) → 1.05',
-      (t) async => expect(await factor(t, 520), 1.05),
+      'mobile (520) → 1.00',
+      (t) async => expect(await factor(t, 520), 1.00),
     );
     testWidgets(
       'tablet (800) → 1.10',

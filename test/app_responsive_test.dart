@@ -53,7 +53,6 @@ void main() {
     test('resolve cubre todos los DeviceType', () {
       const anchuras = {
         DeviceType.mobile: 375.0,
-        DeviceType.mobileLarge: 520.0,
         DeviceType.tablet: 800.0,
         DeviceType.desktop: 1200.0,
         DeviceType.widescreen: 1600.0,
